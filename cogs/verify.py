@@ -1,8 +1,5 @@
-import discord
-import json
 import gspread
 from discord.ext import commands
-from discord.commands import OptionChoice
 from discord.commands import Option
 
 ## Whitelisted Servers 
