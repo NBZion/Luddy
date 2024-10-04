@@ -53,7 +53,7 @@ class verify(commands.Cog):
             if email in comEmailList:
                 ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
                 ctx.author.add_roles(ctx.guild.get_role(1286148423954726912))
-                await ctx.respond("Welcome Committee! Happy to see you Here!",ephemeral = True)
+                await ctx.respond("Welcome Committee! Happy to see you Here! Please make your introduction at <#1288662343890501663> so we can get to know each other!",ephemeral = True)
             else:
                 await ctx.respond("Email Not Detected in List, Please Contact Committee!",ephemeral = True)
         
