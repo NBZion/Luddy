@@ -1,0 +1,4 @@
+venv/
+.env
+**/__pycache__/
+luddy-437514-ef6b902c6444.json
