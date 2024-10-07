@@ -41,11 +41,11 @@ class verify(commands.Cog):
             if str(idnum) in idMemList:
             #    ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
             #    await ctx.respond("Succesfully Verified! Welcome to LUDO!",ephemeral = True)
-                await ctx.respond("Service is still closed to Regular Members!")
+                await ctx.respond("Server is still closed to Regular Members!")
 
             else:
             #    await ctx.respond("Verification Failed, Please Contact LUDO Committee!",ephemeral = True)
-                await ctx.respond("Service is still closed to Regular Members!")
+                await ctx.respond("Server is still closed to Regular Members!")
         elif committeedec == "YES":
             if email in comEmailList:
                 ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
