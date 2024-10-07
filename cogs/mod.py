@@ -15,11 +15,11 @@ class mod(commands.Cog):
     @commands.slash_command(guild_ids=whitelistedServers, description="Deletes messages")
     @commands.has_permissions(ban_members=True)
     async def purge(self, ctx, amount: int):
-        messages = await ctx.channel.history(limit=amount + 1).flatten()
+        messages = await ctx.channel.history(limit=amount).flatten()
         for message in messages:
             await message.delete()
 
-        await ctx.respond("Deleted messages")
+        await ctx.respond("Deleted messages",ephemeral = True)
         deleteMsg = await ctx.send(f"Deleted {amount} messages")
         sleep(5)
         await deleteMsg.delete()
