@@ -5,7 +5,7 @@ from discord.commands import Option
 ## Whitelisted Servers 
 whitelistedServers=[1286147910085513287]
 
-gc = gspread.service_account(filename='luddy-437514-ef6b902c6444.json')
+gc = gspread.service_account(filename='credentials.json')
 
 commiteeList = gc.open_by_url("https://docs.google.com/spreadsheets/d/1tyt7ahVJ883nUckPmxivP8DujdjlHVmSJviXZp-3_h4/edit?usp=sharing")
 memberList = gc.open_by_url("https://docs.google.com/spreadsheets/d/1b6fxvTrmCV6Z3C9pa1zN7slG5-Ss6Tj2dP8c2T71dCw/edit?usp=sharing")
@@ -39,13 +39,13 @@ class verify(commands.Cog):
 
         if committeedec == "NO":
             if str(idnum) in idMemList:
-            #    ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
-            #    await ctx.respond("Succesfully Verified! Welcome to LUDO!",ephemeral = True)
-                await ctx.respond("Server is still closed to Regular Members!")
+                ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
+                await ctx.respond("Succesfully Verified! Welcome to LUDO!",ephemeral = True)
+            #    await ctx.respond("Server is still closed to Regular Members!")
 
             else:
-            #    await ctx.respond("Verification Failed, Please Contact LUDO Committee!",ephemeral = True)
-                await ctx.respond("Server is still closed to Regular Members!")
+                await ctx.respond("Verification Failed, Please Contact LUDO Committee!",ephemeral = True)
+            #    await ctx.respond("Server is still closed to Regular Members!")
         elif committeedec == "YES":
             if email in comEmailList:
                 ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
