@@ -1,4 +1,5 @@
 import gspread
+import discord
 from discord.ext import commands
 from discord.commands import Option
 
@@ -37,10 +38,14 @@ class verify(commands.Cog):
         idMemList.pop(0)
         comEmailList.pop(0)
 
+        logMessage = discord.Embed(title="LUDO Verification Log",color=discord.Colour.dark_green)
+
+        verified = False
         if committeedec == "NO":
             if str(idnum) in idMemList:
                 await ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
                 await ctx.respond("Succesfully Verified! Welcome to LUDO!")
+                verified = True
             #    await ctx.respond("Server is still closed to Regular Members!")
 
             else:
@@ -51,8 +56,18 @@ class verify(commands.Cog):
                 await ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
                 await ctx.author.add_roles(ctx.guild.get_role(1286148423954726912))
                 await ctx.respond("Welcome Committee! Happy to see you Here! Please make your introduction at <#1288662343890501663> so we can get to know each other!")
+                verified = True
             else:
                 await ctx.respond("Email Not Detected in List, Please Contact Committee!")
+
+        logMessage.add_field(name="Member",value=ctx.author)
+        logMessage.add_field(name="ID Number",value=str(idnum),inline=True)
+        logMessage.add_field(name="Email",value=email,inline=True)
+        logMessage.add_field(name="Verified",value=verified)
+        logMessage.add_field(name="Committee",value=committeedec,inline=True)
+
+        await self.bot.get_channel(1291402444546244659).send(embed=logMessage)
+        
         
 
 
