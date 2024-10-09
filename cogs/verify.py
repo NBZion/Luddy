@@ -39,7 +39,7 @@ class verify(commands.Cog):
 
         if committeedec == "NO":
             if str(idnum) in idMemList:
-                ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
+                await ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
                 await ctx.respond("Succesfully Verified! Welcome to LUDO!",ephemeral = True)
             #    await ctx.respond("Server is still closed to Regular Members!")
 
@@ -48,8 +48,8 @@ class verify(commands.Cog):
             #    await ctx.respond("Server is still closed to Regular Members!")
         elif committeedec == "YES":
             if email in comEmailList:
-                ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
-                ctx.author.add_roles(ctx.guild.get_role(1286148423954726912))
+                await ctx.author.add_roles(ctx.guild.get_role(1286149007172702264))
+                await ctx.author.add_roles(ctx.guild.get_role(1286148423954726912))
                 await ctx.respond("Welcome Committee! Happy to see you Here! Please make your introduction at <#1288662343890501663> so we can get to know each other!",ephemeral = True)
             else:
                 await ctx.respond("Email Not Detected in List, Please Contact Committee!",ephemeral = True)
