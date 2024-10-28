@@ -36,8 +36,7 @@ class tourn(commands.Cog):
         await team_category.set_permissions(teamRole, view_channel=True, send_messages=True, connect=True)
         await team_category.set_permissions(organizerRole, view_channel=True, send_messages=True, connect=True)
 
-        await ctx.respond(f"Succesfully created team {team_name}!") 
-
+        await ctx.send("Succesfully created team '" + team_name + "'!")
 
 
 def setup(bot):
