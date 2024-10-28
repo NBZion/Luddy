@@ -5,7 +5,7 @@ from discord.ext import commands
 
 
 ## Whitelisted Servers 
-whitelistedServers=[1299326763628757053]
+whitelistedServers=[1286147910085513287]
 
 
 
