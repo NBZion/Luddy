@@ -18,8 +18,8 @@ class tourn(commands.Cog):
     async def add_team(self, ctx, team_name:str):
         guild = ctx.guild
 
-        #Placeholder
-        organizerRole = ctx.guild.get_role(1286148366706671717)
+        
+        organizerRole = ctx.guild.get_role(1299326763628757054)
 
         teamRole = await guild.create_role(name=team_name)
 
