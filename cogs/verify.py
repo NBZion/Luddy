@@ -38,7 +38,7 @@ class verify(commands.Cog):
         idMemList.pop(0)
         comEmailList.pop(0)
 
-        logMessage = discord.Embed(title="LUDO Verification Log",color=discord.Colour.dark_green)
+        logMessage = discord.Embed(title="LUDO Verification Log",color=discord.Colour.dark_green())
 
         verified = False
         if committeedec == "NO":
