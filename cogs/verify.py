@@ -65,7 +65,7 @@ class verify(commands.Cog):
         logMessage.add_field(name="Email",value=email,inline=True)
         logMessage.add_field(name="Verified",value=verified)
         logMessage.add_field(name="Committee",value=committeedec,inline=True)
-
+        
         await self.bot.get_channel(1291402444546244659).send(embed=logMessage)
         
         
